@@ -1,12 +1,19 @@
-var currentNumberWrapper = document.getElementById('currentNumber')
-var currentNumber = 0;
+document.addEventListener('DOMContentLoaded', function () {
+    let count = 0;
+    const currentNumber = document.getElementById('currentNumber');
+    const incrementButton = document.getElementById('increment');
+    const decrementButton = document.getElementById('decrement');
 
-function increment() {
-    currentNumber = currentNumber + 1;
-    currentNumberWrapper.innerHTML = currentNumber;
-}
+    function increment() {
+        count++;
+        currentNumber.innerHTML = count;
+    }
 
-function decrement() {
-    currentNumber = currentNumber - 1;
-    currentNumberWrapper.innerHTML = currentNumber;
-}
+    function decrement() {
+        count--;
+        currentNumber.innerHTML = count;
+    }
+
+    incrementButton.addEventListener('click', increment);
+    decrementButton.addEventListener('click', decrement);
+});
